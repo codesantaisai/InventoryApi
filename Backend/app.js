@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import {dbConnection} from  "./connectionDb.js"
 import stockRoutes from './routes/stockroute.js'; 
-
+import orderRoutes from './routes/orderRoute.js'
 
 dotenv.config({ path: './config/config.env' });
 
@@ -23,6 +23,8 @@ dbConnection();
 
 // Use stock routes
 app.use('/api/stocks', stockRoutes);
+// Use order routes
+app.use('/api/orders', orderRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
